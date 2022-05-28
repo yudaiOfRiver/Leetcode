@@ -4,7 +4,7 @@ class Solution:
         visited = set()
 
         def dfs_in_island(i, j):      # calculate area of an island
-            if (i in range(rows) and 
+            if (i in range(rows) and
                j in range(cols) and
                (i, j) not in visited and
                grid[i][j] == 1):
