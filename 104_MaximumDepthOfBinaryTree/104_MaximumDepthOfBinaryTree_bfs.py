@@ -4,12 +4,13 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
         queue = collections.deque([root])
-        res = 0        
+        res = 0
         while queue:
             for i in range(len(queue)):   # for loop in the same level (BFS)
                 cur = queue.popleft()
