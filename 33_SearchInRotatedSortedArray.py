@@ -17,4 +17,4 @@ class Solution:
                     r = m-1
                 else:
                     l = m+1
-        return -1
+        return -1 
