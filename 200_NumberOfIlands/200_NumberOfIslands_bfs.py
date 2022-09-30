@@ -8,8 +8,8 @@ class Solution:
         rows, cols = len(grid), len(grid[0])
         visited = set()
         island = 0
-        
-        def bfs_in_island(r, c):
+
+        def can_be_visited_by_node(r, c):
             queue = deque()
             queue.append((r, c))
             visited.add((r, c))
@@ -24,12 +24,12 @@ class Solution:
                        grid[r][c] == "1"):
                         queue.append((r, c))
                         visited.add((r, c))
-                
-                   
+
+
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == "1" and (r, c) not in visited:
-                   bfs_in_island(r, c)
+                   can_be_visited_by_node(r, c)
                    island += 1
                    print(visited)
         return island
