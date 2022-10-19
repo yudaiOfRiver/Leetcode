@@ -14,7 +14,7 @@ class Solution:
         return -1
 
 nums = [-1,0,3,5,9,12]
-target = 9
+target = 8
 ## Output: 4
 
 obj = Solution()
