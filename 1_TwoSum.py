@@ -1,13 +1,16 @@
-class Solution(object):
-    def twoSum(self, nums, target):                                                               
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        hash = {}   # {difference between index i and target: i}
-        for i in range(len(nums)):
-            if target-nums[i] in hash.keys():
-                return [i, hash[target-nums[i]]]
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        N = len(nums)
+        idx = dict()
+
+        for i in range(N):
+            ni = nums[i]
+            if idx.get(target-ni, -1) != -1 and idx.get(target-ni, -1) != i:
+                return [i, idx[target-ni]]
             else:
-                hash[nums[i]] = i
+                idx[ni] = i
+
+nums = [3,2,4]
+target = 6
+obj = Solution()
+print(obj.twoSum(nums, target))
